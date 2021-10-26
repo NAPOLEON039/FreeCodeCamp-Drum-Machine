@@ -1,10 +1,15 @@
 import React from 'react'
 import DrumButton from './DrumButton'
+import '../styles/DrumButtons.css'
 
-function DrumButtons() {
+function DrumButtons({ newAudioPlayed }) {
+    const drumPadKeys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"]
+
     return (
-        <div className="drum-btn-group">
-            <DrumButton drumPadElement={"Q"} />
+        <div className="drum-buttons">
+            {
+                drumPadKeys.map(drumKey => <DrumButton key={drumKey} audioChanged={newAudioPlayed} drumPadElement={drumKey} />)
+            }
         </div>
     )
 }
