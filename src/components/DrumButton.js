@@ -1,10 +1,10 @@
 import React from 'react'
 import '../styles/DrumButton.css'
 
-function DrumButton({ drumPadElement }) {
+function DrumButton({ audioChanged, drumPadElement }) {
     return (
         <div className="drum-btn">
-            <button className="btn drum-pad">{ drumPadElement }</button>
+            <button onClick={() => audioChanged("yo")} className="btn drum-pad">{ drumPadElement }</button>
         </div>
     )
 }
